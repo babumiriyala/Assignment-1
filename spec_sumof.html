@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+  <input type="number" id="num"/>
+  <input type="button" onClick="sumof()" value="submit"/>
+  <p id="output">see here for the output</p>
+
+  <script>
+      function sumof() {
+         var num = document.getElementById("num").value;
+         var result=0;
+         for (i = 1; i <= num; i++) {
+           if (i%3 === 0 || i%5===0) {
+             result = result + i;
+           };
+      };
+         document.getElementById("output").innerHTML=result;
+      };
+  </script>
+
+</body>
+</html>
