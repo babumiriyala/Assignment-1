@@ -9,6 +9,7 @@ var year = prompt("please input a year to find out the next 100 leap years");
 var counter = 100;
 
 function leapyear(years, num) {
+console.time("bob");
     years = parseInt(years);
     var origNum = num;
     years++;
@@ -16,8 +17,10 @@ function leapyear(years, num) {
     var leapYears = '';
       while (num > 0) {
         if (years % 4 === 0 && (years % 100 !== 0 || ( years % 100 === 0 && years % 400 === 0))) {
+            //debugger;
             if (num === 1) {
                 leapYears += years + ".";
+
             }
             else {
                 leapYears += years + ", ";
@@ -28,7 +31,9 @@ function leapyear(years, num) {
         else {
             years++;
         }
+
     }
+    console.timeEnd("bob")
     return "The next " + origNum + " leap years are " + leapYears;
 }
 document.write(leapyear(year, counter));
